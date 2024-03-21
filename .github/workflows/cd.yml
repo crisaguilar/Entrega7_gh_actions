@@ -3,7 +3,7 @@ name: Continuous Deploiment workflow
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   cd:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Install 
+      - name: Install
         run: npm install
       - name: Build
         run: npm run build
