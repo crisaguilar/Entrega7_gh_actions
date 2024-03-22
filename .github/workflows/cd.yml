@@ -12,10 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Setup SSH
-        run: git s
-            mkdir -p ~/.ssh/
-            echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_rsa
-            sudo chmod 600 ~/.ssh/id_rsa
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_rsa
+          sudo chmod 600 ~/.ssh/id_rsa
 
       - name: Git config
         run: |
@@ -27,4 +27,4 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy
-        run: npm run deploy -- -r git@github.com:crisaguilar/Entrega7_gh_actions.git 
+        run: npm run deploy -- -r git@github.com:crisaguilar/Entrega7_gh_actions.git
