@@ -12,14 +12,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Setup SSH
-        run: 
+        run: git s
             mkdir -p ~/.ssh/
             echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_rsa
             sudo chmod 600 ~/.ssh/id_rsa
 
       - name: Git config
         run: |
-          git config --global user.email "cd-user@myapp.com"
+          git config --global user.email "cd-user@mylsapp.com"
           git config --global user.name "cd-user"
 
       - name: Install
